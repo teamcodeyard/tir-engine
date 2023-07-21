@@ -1,0 +1,63 @@
+- title: Design patterns
+  topics:
+    - Singleton
+    - Factory
+    - Decorator
+
+- title: CSS
+  topics:
+    - CSS selectors and specificity
+    - Box model and layout
+    - Flexbox and Grid
+    - Responsive design
+    - CSS preprocessors (e.g., Sass, Less)
+
+- title: JavaScript
+  topics:
+    - Variables and data types
+    - Functions and scope
+    - DOM manipulation
+    - Events and event handling
+    - AJAX and Fetch API
+    - ES6+ features
+
+- title: Frameworks and Libraries
+  topics:
+    - React.js
+    - Angular
+    - Vue.js
+    - Bootstrap
+    - Tailwind CSS
+
+- title: Build Tools and Task Runners
+  topics:
+    - Package managers (e.g., npm, yarn)
+    - Task runners (e.g., Gulp, Grunt)
+    - Module bundlers (e.g., Webpack, Parcel)
+    - Linters and formatters (e.g., ESLint, Prettier)
+
+- title: Version Control
+  topics:
+    - Git basics
+    - Branching and merging
+    - Collaborative workflows
+    - GitHub or GitLab
+
+- title: Testing and Debugging
+  topics:
+    - Unit testing
+    - End-to-end testing
+    - Debugging techniques
+
+- title: Performance Optimization
+  topics:
+    - Minification and compression
+    - Caching and CDNs
+    - Image optimization
+    - Lazy loading
+
+- title: Browser DevTools
+  topics:
+    - Inspecting and manipulating the DOM
+    - Debugging JavaScript
+    - Network monitoring and performance profiling

@@ -6,3 +6,16 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+tokio = { version = "1.29.1", features = ["full"] }
+dotenv = "0.15.0"
+serde_yaml = "0.9.24"
+serde = { version = "1.0.171", features = ["derive"] }
+reqwest = { version = "0.11", features = ["json", "tokio-native-tls"] }
+
+[lib]
+name = "tirengine"
+path = "src/lib.rs"
+
+[[bin]]
+name = "tir-engine"
+path = "src/bin.rs"
