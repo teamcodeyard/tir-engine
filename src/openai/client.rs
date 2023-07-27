@@ -20,7 +20,6 @@ struct OpenAIRequest {
 
 #[derive(Deserialize)]
 pub struct OpenAIResponse {
-    model: String,
     pub choices: Vec<Choice>,
 }
 

@@ -1,63 +1,100 @@
 - title: Design patterns
   topics:
-    - Singleton
-    - Factory
-    - Decorator
+    - title: Singleton
+      explanation: ""
+    - title: Factory
+      explanation: ""       
+    - title: Decorator
+      explanation: ""
 
 - title: CSS
   topics:
-    - CSS selectors and specificity
-    - Box model and layout
-    - Flexbox and Grid
-    - Responsive design
-    - CSS preprocessors (e.g., Sass, Less)
+    - title: CSS selectors and specificity
+      explanation: ""
+    - title: Box model and layout
+      explanation: ""
+    - title: Flexbox and Grid
+      explanation: ""
+    - title: Responsive design
+      explanation: ""
+    - title: CSS preprocessors (e.g., Sass, Less)
+      explanation: ""
 
 - title: JavaScript
   topics:
-    - Variables and data types
-    - Functions and scope
-    - DOM manipulation
-    - Events and event handling
-    - AJAX and Fetch API
-    - ES6+ features
+    - title: Variables and data types
+      explanation: ""
+    - title: Functions and scope
+      explanation: ""
+    - title: DOM manipulation
+      explanation: ""
+    - title: Events and event handling
+      explanation: ""
+    - title: AJAX and Fetch API
+      explanation: ""
+    - title: ES6+ features
+      explanation: ""
 
 - title: Frameworks and Libraries
   topics:
-    - React.js
-    - Angular
-    - Vue.js
-    - Bootstrap
-    - Tailwind CSS
+    - title: React.js
+      explanation: ""
+    - title: Angular
+      explanation: ""
+    - title: Vue.js
+      explanation: ""
+    - title: Bootstrap
+      explanation: ""
+    - title: Tailwind CSS
+      explanation: ""
 
 - title: Build Tools and Task Runners
   topics:
-    - Package managers (e.g., npm, yarn)
-    - Task runners (e.g., Gulp, Grunt)
-    - Module bundlers (e.g., Webpack, Parcel)
-    - Linters and formatters (e.g., ESLint, Prettier)
+    - title: Package managers (e.g., npm, yarn)
+      explanation: ""
+    - title: Task runners (e.g., Gulp, Grunt)
+      explanation: ""
+    - title: Module bundlers (e.g., Webpack, Parcel)
+      explanation: ""
+    - title: Linters and formatters (e.g., ESLint, Prettier)
+      explanation: ""
 
 - title: Version Control
   topics:
-    - Git basics
-    - Branching and merging
-    - Collaborative workflows
-    - GitHub or GitLab
+    - title: Git basics
+      explanation: ""
+    - title: Branching and merging
+      explanation: ""
+    - title: Collaborative workflows
+      explanation: ""
+    - title: GitHub or GitLab
+      explanation: ""
 
 - title: Testing and Debugging
   topics:
-    - Unit testing
-    - End-to-end testing
-    - Debugging techniques
+    - title: Unit testing
+      explanation: ""
+    - title: End-to-end testing
+      explanation: ""
+    - title: Debugging techniques
+      explanation: ""
 
 - title: Performance Optimization
   topics:
-    - Minification and compression
-    - Caching and CDNs
-    - Image optimization
-    - Lazy loading
+    - title: Minification and compression
+      explanation: ""
+    - title: Caching and CDNs
+      explanation: ""
+    - title: Image optimization
+      explanation: ""
+    - title: Lazy loading
+      explanation: ""
 
 - title: Browser DevTools
   topics:
-    - Inspecting and manipulating the DOM
-    - Debugging JavaScript
-    - Network monitoring and performance profiling
+    - title: Inspecting and manipulating the DOM
+      explanation: ""
+    - title: Debugging JavaScript
+      explanation: ""
+    - title: Network monitoring and performance profiling
+      explanation: ""
