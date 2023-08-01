@@ -1,19 +1,8 @@
+use crate::structs::Thematic;
 use dotenv::dotenv;
 use std::env;
 use std::fs::File;
 use std::io::Read;
-
-#[derive(Debug, serde::Deserialize, Clone)]
-pub struct Topic {
-    pub title: String,
-    pub explanation: Option<String>,
-}
-
-#[derive(Debug, serde::Deserialize)]
-pub struct Thematic {
-    pub title: String,
-    pub topics: Vec<Topic>,
-}
 
 pub fn load_env() {
     dotenv().ok();
@@ -32,4 +21,3 @@ pub fn load_roadmap() -> Vec<Thematic> {
         .expect("Failed to read config file");
     serde_yaml::from_str(&contents).expect("Failed to parse YAML")
 }
-
