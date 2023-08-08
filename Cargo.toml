@@ -12,6 +12,7 @@ serde_yaml = "0.9.24"
 serde = { version = "1.0.171", features = ["derive"] }
 reqwest = { version = "0.11", features = ["json", "tokio-native-tls"] }
 regex = "1"
+grcov = "0.8.19"
 
 [lib]
 name = "tirengine"

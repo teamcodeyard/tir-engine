@@ -1,0 +1,100 @@
+- title: Design patterns
+  topics:
+    - title: Singleton
+      explanation: ""
+    - title: Factory
+      explanation: ""       
+    - title: Decorator
+      explanation: ""
+
+- title: CSS
+  topics:
+    - title: CSS selectors and specificity
+      explanation: ""
+    - title: Box model and layout
+      explanation: ""
+    - title: Flexbox and Grid
+      explanation: ""
+    - title: Responsive design
+      explanation: ""
+    - title: CSS preprocessors (e.g., Sass, Less)
+      explanation: ""
+
+- title: JavaScript
+  topics:
+    - title: Variables and data types
+      explanation: ""
+    - title: Functions and scope
+      explanation: ""
+    - title: DOM manipulation
+      explanation: ""
+    - title: Events and event handling
+      explanation: ""
+    - title: AJAX and Fetch API
+      explanation: ""
+    - title: ES6+ features
+      explanation: ""
+
+- title: Frameworks and Libraries
+  topics:
+    - title: React.js
+      explanation: ""
+    - title: Angular
+      explanation: ""
+    - title: Vue.js
+      explanation: ""
+    - title: Bootstrap
+      explanation: ""
+    - title: Tailwind CSS
+      explanation: ""
+
+- title: Build Tools and Task Runners
+  topics:
+    - title: Package managers (e.g., npm, yarn)
+      explanation: ""
+    - title: Task runners (e.g., Gulp, Grunt)
+      explanation: ""
+    - title: Module bundlers (e.g., Webpack, Parcel)
+      explanation: ""
+    - title: Linters and formatters (e.g., ESLint, Prettier)
+      explanation: ""
+
+- title: Version Control
+  topics:
+    - title: Git basics
+      explanation: ""
+    - title: Branching and merging
+      explanation: ""
+    - title: Collaborative workflows
+      explanation: ""
+    - title: GitHub or GitLab
+      explanation: ""
+
+- title: Testing and Debugging
+  topics:
+    - title: Unit testing
+      explanation: ""
+    - title: End-to-end testing
+      explanation: ""
+    - title: Debugging techniques
+      explanation: ""
+
+- title: Performance Optimization
+  topics:
+    - title: Minification and compression
+      explanation: ""
+    - title: Caching and CDNs
+      explanation: ""
+    - title: Image optimization
+      explanation: ""
+    - title: Lazy loading
+      explanation: ""
+
+- title: Browser DevTools
+  topics:
+    - title: Inspecting and manipulating the DOM
+      explanation: ""
+    - title: Debugging JavaScript
+      explanation: ""
+    - title: Network monitoring and performance profiling
+      explanation: ""
