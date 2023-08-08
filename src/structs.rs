@@ -1,6 +1,5 @@
-
 #[derive(Debug, serde::Deserialize, Clone)]
-pub struct AnswerResult {
+pub struct Answer {
     pub score: u8,
     pub explanation: String,
 }
