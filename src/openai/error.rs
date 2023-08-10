@@ -20,11 +20,11 @@ pub enum TirError {
 // Note: I haven't looked at OpenAI documentation to validate this scheme. Take this with a grain of salt.
 #[derive(Serialize, Deserialize, Debug)]
 pub struct OpenAIError {
-    pub error: OpenAiErrorDetails,
+    pub error: Option<OpenAiErrorDetails>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct OpenAiErrorDetails {
-    pub code: String,
+    pub code: Option<String>,
     pub message: Option<String>,
 }

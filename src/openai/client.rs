@@ -106,8 +106,7 @@ impl Client {
             .header(reqwest::header::CONTENT_TYPE, "application/json")
             .json(&request)
             .send()
-            .await?
-            .json::<Either<OpenAIResponse, OpenAIError>>()
+            .await?.json::<Either<OpenAIResponse, OpenAIError>>()
             .await;
 
         // If we get back an error JSON from OpenAI, parse and keep that around in the `Err` variant.
@@ -159,9 +158,10 @@ mod tests {
         configuration::load_env(".env");
         let secret_key = configuration::get_var("OPENAI_SK").unwrap();
         let client = Client::new(secret_key);
+        let result = client.get_ai_response(vec![], 0).await;
         assert!(matches!(
-            client.get_ai_response(vec![], 0).await,
-            Err(TirError::EmptyChoiceVec)
+            result,
+            Err(TirError::OpenAIError(_))
         ));
     }
 }
