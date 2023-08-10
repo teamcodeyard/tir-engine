@@ -155,11 +155,13 @@ mod tests {
     }
 
     #[test]
-    #[should_panic(expected = "missing field `choices`")]
     async fn test_get_ai_response_negative() {
         configuration::load_env(".env");
         let secret_key = configuration::get_var("OPENAI_SK").unwrap();
         let client = Client::new(secret_key);
-        client.get_ai_response(vec![], 0).await.unwrap();
+        assert!(matches!(
+            client.get_ai_response(vec![], 0).await,
+            Err(TirError::EmptyChoiceVec)
+        ));
     }
 }
