@@ -13,5 +13,10 @@ The project consists of several modules, <b>tir-engine</b> is responsible for co
 
 <p>The platform developed by the <b><a href="https://factory.codeyard.eu/"> CodeYard Factory</a></b>, the hungarian developer community.</p>
 
+<h3>API documentation</h3>
+<p>
+We use Postman to define REST endpoints, you can find our collection <a href="https://documenter.getpostman.com/view/795261/2s9Xy6pUdQ#ee63743c-87e3-471f-8b24-370431aea6b4">here</a>!
+</p>
+
 <h3>How to use?</h3>
 <p>Soon...</p>
