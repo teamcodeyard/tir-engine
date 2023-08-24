@@ -30,3 +30,23 @@ pub async fn correct_explanation(correction: String, topic: &mut Topic) -> Resul
     let client = get_client();
     client.correct_explanation(correction, topic).await
 }
+
+pub mod sync {
+    use super::{Answer, Thematic, TirError, Topic};
+    use tokio::runtime::Runtime;
+
+    pub fn generate_knowledge() -> Result<Vec<Thematic>, TirError> {
+        let rt = Runtime::new().unwrap();
+        rt.block_on(async { super::generate_knowledge().await })
+    }
+
+    pub fn evaluate_answer(answer: String, topic: Topic) -> Result<Answer, TirError> {
+        let rt = Runtime::new().unwrap();
+        rt.block_on(async { super::evaluate_answer(answer, topic).await })
+    }
+
+    pub fn correct_explanation(correction: String, topic: &mut Topic) -> Result<(), TirError> {
+        let rt = Runtime::new().unwrap();
+        rt.block_on(async { super::correct_explanation(correction, topic).await })
+    }
+}
