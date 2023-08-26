@@ -2,7 +2,7 @@ mod configuration;
 mod openai;
 mod structs;
 use openai::error::TirError;
-use structs::{Answer, Thematic, Topic};
+pub use structs::{Answer, Thematic, Topic};
 
 fn get_client() -> openai::GPT {
     configuration::load_env(".env");
