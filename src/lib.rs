@@ -5,7 +5,7 @@ use openai::error::TirError;
 pub use structs::{Answer, Thematic, Topic};
 
 fn get_client() -> openai::GPT {
-    configuration::load_env(".env");
+    configuration::load_env();
     let secret_key = configuration::get_var("OPENAI_SK").unwrap();
     openai::GPT::new(secret_key)
 }

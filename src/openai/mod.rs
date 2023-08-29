@@ -143,7 +143,7 @@ mod tests {
 
     #[test]
     async fn test_ask_response_length() {
-        configuration::load_env(".env");
+        configuration::load_env();
         let secret_key = configuration::get_var("OPENAI_SK").unwrap();
         let gpt_client = GPT::new(secret_key.clone());
         let response = gpt_client
@@ -162,7 +162,7 @@ mod tests {
 
     #[test]
     async fn test_generate_knowledge() {
-        configuration::load_env(".env");
+        configuration::load_env();
         let secret_key = configuration::get_var("OPENAI_SK").unwrap();
         let client = GPT::new(secret_key);
         let mut thematic = Thematic {
@@ -180,7 +180,7 @@ mod tests {
     }
     #[test]
     async fn correct_explanation() {
-        configuration::load_env(".env");
+        configuration::load_env();
         let secret_key = configuration::get_var("OPENAI_SK").unwrap();
         let client = GPT::new(secret_key);
         let explanation = String::from("The Singleton pattern is a design pattern that ensures only one instance of a class is created throughout the application. It is useful when you want to restrict the instantiation of a class to a single object and ensure that no other object can create additional instances.");
@@ -203,7 +203,7 @@ mod tests {
 
     #[test]
     async fn test_evaluate_answer() {
-        configuration::load_env(".env");
+        configuration::load_env();
         let secret_key = configuration::get_var("OPENAI_SK").unwrap();
         let client = GPT::new(secret_key);
 

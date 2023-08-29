@@ -122,12 +122,12 @@ impl Client {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::configuration;
+    use crate::configuration::{self};
     use tokio::test;
 
     #[test]
     async fn test_get_ai_response() {
-        configuration::load_env(".env");
+        configuration::load_env();
         let secret_key = configuration::get_var("OPENAI_SK").unwrap();
         let client = Client::new(secret_key);
         let response = client
@@ -155,7 +155,7 @@ mod tests {
 
     #[test]
     async fn test_get_ai_response_negative() {
-        configuration::load_env(".env");
+        configuration::load_env();
         let secret_key = configuration::get_var("OPENAI_SK").unwrap();
         let client = Client::new(secret_key);
         let result = client.get_ai_response(vec![], 0).await;

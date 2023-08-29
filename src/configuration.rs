@@ -3,10 +3,9 @@ use dotenv::dotenv;
 use std::env;
 use std::fs::File;
 use std::io::Read;
-use std::path::Path;
 
-pub fn load_env<P: AsRef<Path>>(filename: P) {
-    let _ = dotenv::from_filename(filename);
+pub fn load_env() {
+    let _ = dotenv::dotenv();
     dotenv().ok();
 }
 
@@ -28,7 +27,7 @@ mod tests {
 
     #[test]
     fn test_load_env() {
-        load_env("default.env");
+        load_env();
         let roadmap_file_path = get_var("ROADMAP_FILE_PATH");
         assert!(
             roadmap_file_path.is_some(),
@@ -38,14 +37,14 @@ mod tests {
 
     #[test]
     fn test_get_var() {
-        load_env("default.env");
+        load_env();
         let roadmap_file_path = get_var("ROADMAP_FILE_PATH");
         assert_eq!(roadmap_file_path.unwrap(), "./default.roadmap.yml");
     }
 
     #[test]
     fn test_load_env_negative() {
-        load_env("default.env");
+        load_env();
         let roadmap_file_path = get_var("roadmap_file_path");
         assert!(roadmap_file_path.is_none(), "roadmap_file_path does exist");
     }
