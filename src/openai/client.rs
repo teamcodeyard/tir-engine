@@ -16,18 +16,6 @@ pub struct OpenAIRequestMessage {
 }
 
 impl OpenAIRequestMessage {
-    // By accepting `impl Into<Cow<'static, str>>`, we may accept `String`s or `&str`s too.
-    // This is just makes it more comfortable to construct this type.
-    pub(crate) fn from_parts(
-        role: impl Into<Cow<'static, str>>,
-        content: impl Into<Cow<'static, str>>,
-    ) -> Self {
-        Self {
-            role: role.into(),
-            content: content.into(),
-        }
-    }
-
     pub(crate) fn with_system_role(content: impl Into<Cow<'static, str>>) -> Self {
         Self {
             role: "system".into(),
