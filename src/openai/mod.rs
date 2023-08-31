@@ -131,7 +131,6 @@ impl GPT {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::configuration;
     use tokio::test;
 
     #[test]
@@ -142,9 +141,8 @@ mod tests {
     }
 
     #[test]
-    async fn test_ask_response_length() {
-        configuration::load_env(".env");
-        let secret_key = configuration::get_var("OPENAI_SK").unwrap();
+    async fn test_ask_response_length() {;
+        let secret_key = std::env::var("OPENAI_SK").unwrap();
         let gpt_client = GPT::new(secret_key.clone());
         let response = gpt_client
             .ask_with_limits(
@@ -162,8 +160,7 @@ mod tests {
 
     #[test]
     async fn test_generate_knowledge() {
-        configuration::load_env(".env");
-        let secret_key = configuration::get_var("OPENAI_SK").unwrap();
+        let secret_key = std::env::var("OPENAI_SK").unwrap();
         let client = GPT::new(secret_key);
         let mut thematic = Thematic {
             title: String::from("Design patterns"),
@@ -180,8 +177,7 @@ mod tests {
     }
     #[test]
     async fn correct_explanation() {
-        configuration::load_env(".env");
-        let secret_key = configuration::get_var("OPENAI_SK").unwrap();
+        let secret_key = std::env::var("OPENAI_SK").unwrap();
         let client = GPT::new(secret_key);
         let explanation = String::from("The Singleton pattern is a design pattern that ensures only one instance of a class is created throughout the application. It is useful when you want to restrict the instantiation of a class to a single object and ensure that no other object can create additional instances.");
         let mut topic = Topic {
@@ -203,8 +199,7 @@ mod tests {
 
     #[test]
     async fn test_evaluate_answer() {
-        configuration::load_env(".env");
-        let secret_key = configuration::get_var("OPENAI_SK").unwrap();
+        let secret_key = std::env::var("OPENAI_SK").unwrap();
         let client = GPT::new(secret_key);
 
         let topic = Topic {
