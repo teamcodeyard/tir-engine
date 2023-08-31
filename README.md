@@ -19,4 +19,20 @@ We use Postman to define REST endpoints, you can find our collection <a href="ht
 </p>
 
 <h3>How to use?</h3>
-<p>Soon...</p>
+
+```rust
+
+use tirengine::{ GPT };
+
+let gpt = GPT::new(String::from("VERY_SECRET_OPENAI_KEY"));
+
+```
+
+<h3>How to run test cases?</h3>
+
+```bash
+export OPENAI_SK = "VERY_SECRET_OPENAI_KEY"
+cargo test
+```
+
+<p>loading...</p>

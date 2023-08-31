@@ -16,18 +16,7 @@ pub struct OpenAIRequestMessage {
 }
 
 impl OpenAIRequestMessage {
-    // By accepting `impl Into<Cow<'static, str>>`, we may accept `String`s or `&str`s too.
-    // This is just makes it more comfortable to construct this type.
-    pub(crate) fn from_parts(
-        role: impl Into<Cow<'static, str>>,
-        content: impl Into<Cow<'static, str>>,
-    ) -> Self {
-        Self {
-            role: role.into(),
-            content: content.into(),
-        }
-    }
-
+   
     pub(crate) fn with_system_role(content: impl Into<Cow<'static, str>>) -> Self {
         Self {
             role: "system".into(),
@@ -122,13 +111,11 @@ impl Client {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::configuration::{self};
     use tokio::test;
 
     #[test]
     async fn test_get_ai_response() {
-        configuration::load_env();
-        let secret_key = configuration::get_var("OPENAI_SK").unwrap();
+        let secret_key = std::env::var("OPENAI_SK").unwrap();
         let client = Client::new(secret_key);
         let response = client
             .get_ai_response(
@@ -155,8 +142,7 @@ mod tests {
 
     #[test]
     async fn test_get_ai_response_negative() {
-        configuration::load_env();
-        let secret_key = configuration::get_var("OPENAI_SK").unwrap();
+        let secret_key = std::env::var("OPENAI_SK").unwrap();
         let client = Client::new(secret_key);
         let result = client.get_ai_response(vec![], 0).await;
         assert!(matches!(
