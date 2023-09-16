@@ -141,7 +141,7 @@ mod tests {
     }
 
     #[test]
-    async fn test_ask_response_length() {;
+    async fn test_ask_response_length() {
         let secret_key = std::env::var("OPENAI_SK").unwrap();
         let gpt_client = GPT::new(secret_key.clone());
         let response = gpt_client
