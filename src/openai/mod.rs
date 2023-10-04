@@ -23,7 +23,12 @@ pub struct GPT {
 impl GPT {
     pub fn new(secret_key: String) -> Self {
         Self {
-            client: Client::new(secret_key),
+            client: Client::new(secret_key, false),
+        }
+    }
+    pub fn new_development() -> Self {
+        Self {
+            client: Client::new(String::from("DUMMY_SECRET_KEY"), true),
         }
     }
 
@@ -141,7 +146,7 @@ mod tests {
     }
 
     #[test]
-    async fn test_ask_response_length() {;
+    async fn test_ask_response_length() {
         let secret_key = std::env::var("OPENAI_SK").unwrap();
         let gpt_client = GPT::new(secret_key.clone());
         let response = gpt_client

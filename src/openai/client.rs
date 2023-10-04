@@ -16,7 +16,6 @@ pub struct OpenAIRequestMessage {
 }
 
 impl OpenAIRequestMessage {
-   
     pub(crate) fn with_system_role(content: impl Into<Cow<'static, str>>) -> Self {
         Self {
             role: "system".into(),
@@ -57,6 +56,7 @@ pub struct ChoiceMessage {
 
 pub struct Client {
     pub secret_key: String,
+    pub is_development: bool,
     // To avoid creating a new reqwest client on every call to `get_ai_response`, let's store it here.
     reqwest_client: reqwest::Client,
 }
@@ -70,11 +70,12 @@ enum Either<L, R> {
 }
 
 impl Client {
-    pub fn new(secret_key: String) -> Self {
+    pub fn new(secret_key: String, is_development: bool) -> Self {
         let reqwest_client = reqwest::Client::new();
         Self {
             secret_key,
             reqwest_client,
+            is_development
         }
     }
 
@@ -88,6 +89,9 @@ impl Client {
             max_tokens,
             model: GPT_35_TURBO,
         };
+        if self.is_development {
+            return Ok(OpenAIResponse { choices: vec![Choice{message: ChoiceMessage { role: String::from("mock_answer"), content: String::from("Mock answer just for testing, please use is_development: false to get real results.") }}] })    
+        }
         let response = self
             .reqwest_client
             .post(OPENAI_URL)
@@ -95,7 +99,8 @@ impl Client {
             .header(reqwest::header::CONTENT_TYPE, "application/json")
             .json(&request)
             .send()
-            .await?.json::<Either<OpenAIResponse, OpenAIError>>()
+            .await?
+            .json::<Either<OpenAIResponse, OpenAIError>>()
             .await;
 
         // If we get back an error JSON from OpenAI, parse and keep that around in the `Err` variant.
@@ -116,7 +121,7 @@ mod tests {
     #[test]
     async fn test_get_ai_response() {
         let secret_key = std::env::var("OPENAI_SK").unwrap();
-        let client = Client::new(secret_key);
+        let client = Client::new(secret_key, false);
         let response = client
             .get_ai_response(
                 vec![OpenAIRequestMessage::with_system_role(
@@ -143,11 +148,8 @@ mod tests {
     #[test]
     async fn test_get_ai_response_negative() {
         let secret_key = std::env::var("OPENAI_SK").unwrap();
-        let client = Client::new(secret_key);
+        let client = Client::new(secret_key, false);
         let result = client.get_ai_response(vec![], 0).await;
-        assert!(matches!(
-            result,
-            Err(TirError::OpenAIError(_))
-        ));
+        assert!(matches!(result, Err(TirError::OpenAIError(_))));
     }
 }
